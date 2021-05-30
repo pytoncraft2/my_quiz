@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ResultController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1><em><small class="text-muted">Resultat & Historique !</small></em></h1>
+{%if score|length > 0%}
+{%for scores in score%}
+<div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+  <div class="card-header">{{scores.date | date('y')}}</div>
+  <div class="card-body">
+    <h4 class="card-title">{{scores.score}}</h4>
+    <p class="card-text">categorie (id pour l'instant): {{scores.categorieId}}</p>
+  </div>
+</div>
+{%endfor%}
+{%else%}
+... Aucun historique ! 😱
+{%endif%}
+
+{% endblock %}

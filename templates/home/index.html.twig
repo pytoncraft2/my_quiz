@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+{% if is_granted('ROLE_ADMIN') %}
+    <a href="...">Delete</a>
+{% endif %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .flex { display: flex; justify-content: space-between; }
+</style>
+
+<div class="example-wrapper">
+
+    <h1><small class="text-muted">Catégories</small></h1>
+{% for categorie in categories %}
+<div class="d-grid gap-2">
+  <a href="{{ path('categorie_show',{'id': categorie.id }) }}" class="btn btn-lg btn-primary flex">{{ categorie.name }}<span>{{categorie.getTotalQuestion}}</span></a>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

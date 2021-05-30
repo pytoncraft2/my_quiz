@@ -1,0 +1,37 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+test:
+  path: /test
+  controller: App\Controller\TestController::start
+login:
+  path: /login
+  controller: App\Controller\LoginController::index
+
+home:
+  path: /
+  controller: App\Controller\HomeController::index
+account:
+  path: /account
+  controller: App\Controller\AccountController::index
+
+categorie:
+  path: /categorie/{id}
+  controller: App\Controller\Catego::index
+
+
+categorieresult:
+  path: /categorie/{id}/result
+  controller: App\Controller\Catego::index
+
+createquizz:
+  path: /createquizz
+  controller: App\Controller\CreatequizzController::index
+
+createquizz2:
+  path: /createquizz2
+  controller: App\Controller\Createquizz2Controller::index
+
+dashboard:
+    path: /admin
+    controller: App\Controller\Admin\DashboardController::index
